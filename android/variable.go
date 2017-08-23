@@ -20,6 +20,8 @@ import (
 	"runtime"
 	"strings"
 
+	"aosap/soong/android"
+
 	"github.com/google/blueprint/proptools"
 )
 
@@ -126,6 +128,9 @@ type variableProperties struct {
 			Static_libs  []string
 			Srcs         []string
 		}
+
+		// include Aosap variables
+		Aosap android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -269,6 +274,9 @@ type productVariables struct {
 	BoardPlatPrivateSepolicyDirs []string `json:",omitempty"`
 
 	VendorVars map[string]map[string]string `json:",omitempty"`
+
+	// include Aosap variables
+	Aosap android.ProductVariables
 
 	Ndk_abis               *bool `json:",omitempty"`
 	Exclude_draft_ndk_apis *bool `json:",omitempty"`
