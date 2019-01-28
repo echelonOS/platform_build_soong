@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"aosap/soong/android"
+	"echelon/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -117,8 +117,8 @@ type variableProperties struct {
 			Srcs         []string
 		}
 
-		// include Aosap variables
-		Aosap android.Product_variables
+		// include echelon variables
+		Echelon android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -236,8 +236,8 @@ type productVariables struct {
 
 	VendorVars map[string]map[string]string `json:",omitempty"`
 
-	// include Aosap variables
-	Aosap android.ProductVariables
+	// include echelon variables
+	echelon android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
